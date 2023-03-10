@@ -5,45 +5,40 @@
         <input class="searchbar" type="text" placeholder="Search food...">
 
         <div class="food-categories">
-            <span>
-                Pizza
+
+            <span *ngFor="let categorie of upperCaseCategories">
+                {{ categorie }}
             </span>
-            <span>
-                Pizza
-            </span>
-            <span>
-                Pizza
-            </span>
-            <span>
-                Pizza
-            </span>
-            <span>
-                Pizza
-            </span>
+
         </div>
 
-        <div class="menu-list">
+        <div *ngIf="apiLoaded" class="menu-list" id="menuList">
 
-            <img class="categorie-image" src="../assets/images/pizza.jpg">
+            <div *ngFor="let categorie of menuJSON" class="food-categorie">
 
-            <div *ngFor="let food of categorieList10" class="food-background" [ngStyle]="{'background-image': 'url(' + food.img + ')'}">
+                <img class="categorie-image" [src]="categorie.menus[0].img">
 
-                <div class="single-menu">
+                <div *ngFor="let menu of categorie.menus" class="food-background"
+                    [ngStyle]="{'background-image': 'url(' + menu.img + ')'}">
 
-                    <h2>{{ food.name }}</h2>
-                    <p>{{ food.dsc }}</p>
-                    <span><b>{{ food.price }}</b></span>
-    
-                    <button class="add-menu-button" mat-mini-fab>
-                        <mat-icon>add</mat-icon>
-                    </button>
-    
+                    <div class="food-background">
+
+                        <div class="single-menu">
+
+                            <h2>{{menu.name}}</h2>
+
+                            <p>{{menu.dsc}}</p>
+
+                            <span><b>{{menu.price}} €</b></span>
+
+                            <button class="add-menu-button" mat-mini-fab>
+                                <mat-icon>add</mat-icon>
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>

@@ -7,49 +7,81 @@ import { Component } from '@angular/core';
 })
 export class FoodsPageComponent {
 
-  categorieList10: any = [];
+  menuJSON: any = [
+    
+    {
+      'food': 'best-foods',
+      'menus': []
+    },
+    {
+      'food': 'pizzas',
+      'menus': []
+    },
+    {
+      'food': 'burgers',
+      'menus': []
+    },
+    {
+      'food': 'bbqs',
+      'menus': []
+    },
+    {
+      'food': 'drinks',
+      'menus': []
+    }
+  ];
+
+  upperCaseCategories = [];
+  apiLoaded: boolean = false;
+
+
 
   constructor() {
-    this.x();
+    this.upperCaseCategorieNames();
+    this.y();
   }
 
-  async x() {
-    await fetch('https://free-food-menus-api-production.up.railway.app/pizzas')
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Network response was not ok.');
-      })
-      .then(data => {
-        for (let i = 0; i < 10; i++) {
-          const menu = data[i];
-          this.categorieList10.push(menu);          
-        }
-        console.log('Eine Liste an ausgewähltem Essen (10x):', this.categorieList10);
-      })
-      .catch(error => {
-        console.log('There was a problem with the fetch operation:', error);
-      });
+  upperCaseCategorieNames() {
+    this.menuJSON.forEach(menu => {
+      this.upperCaseCategories.push(menu.food.charAt(0).toUpperCase() + menu.food.slice(1));
+    });    
   }
+
+  async y() {
+    for (let i = 0; i < this.menuJSON.length; i++) {
+      const menuCategorie = this.menuJSON[i].food;
+
+      await fetch(`https://free-food-menus-api-production.up.railway.app/${menuCategorie}`)
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        })
+
+        .then(data => {
+          for (let d = 0; d < 5; d++) {
+            const menu = data[d];
+            this.menuJSON[i].menus.push(menu);
+          }
+        })
+
+        .catch(error => {
+          console.log('There was a problem with the fetch operation:', error);
+        });
+    }
+    console.log(this.menuJSON);
+    this.apiLoaded = true;
+
+  }
+
+
+
+
+
+
+
+
+
+
 }
-
-
-
-  // SOME OTHER FOODS
-  //
-  // /bbqs
-  // /best-foods
-  // /breads
-  // /burgers
-  // /chocolates
-  // /desserts
-  // /drinks
-  // /fried-chicken
-  // /ice-cream
-  // /pizzas
-  // /porks
-  // /sandwiches
-  // /sausages
-  // /steaks
-
