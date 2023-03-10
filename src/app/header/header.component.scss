@@ -6,8 +6,8 @@ header {
     z-index: 99;
     height: 100px;
     
-    background-color: rgb(30, 30, 30);
-    box-shadow: 0 0 10px rgb(30, 30, 30);
+    // background-color: rgb(30, 30, 30);
+    // box-shadow: 0 0 10px 10px rgb(30, 30, 30);
 
     display: flex;
     justify-content: center;
@@ -39,7 +39,7 @@ header {
 .profile-img {
     width: 54px;
     height: 54px;
-    border: 1px solid gray;
+    border: 2px solid gray;
     border-radius: 20px;
     display: flex;
     justify-content: center;
