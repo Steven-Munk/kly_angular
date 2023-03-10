@@ -92,11 +92,11 @@ export class FoodsPageComponent {
       categorie.menus.forEach(menu => {
         let menuName = menu.name.toLowerCase();
         let searchedName = search.toLowerCase();
-
-        if (!menuName.includes(searchedName)) {
+        if (menuName.includes(searchedName)) {
+          menu.display = true;
+        } else {
           menu.display = false;
         }
-
       });
     });
   }
