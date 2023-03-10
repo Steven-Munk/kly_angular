@@ -2,7 +2,7 @@
 
     <div class="input-and-content">
 
-        <input class="searchbar" type="text" placeholder="Search food...">
+        <input class="searchbar" type="text" placeholder="Search food..." #box (input)="searchFood(box.value)">
 
         <div class="food-categories">
 
@@ -16,25 +16,27 @@
 
             <div *ngFor="let categorie of menuJSON" class="food-categorie">
 
-                <img class="categorie-image" [src]="categorie.menus[0].img">
+                <img *ngIf="!userSearchesFood" class="categorie-image" [src]="categorie.menus[0].img">
 
-                <div *ngFor="let menu of categorie.menus" class="food-background"
-                    [ngStyle]="{'background-image': 'url(' + menu.img + ')'}">
+                <div *ngFor="let menu of categorie.menus">
 
-                    <div class="food-background">
+                    <div *ngIf="menu.display" class="food-background" [ngStyle]="{'background-image': 'url(' + menu.img + ')'}">
 
-                        <div class="single-menu">
+                        <div class="food-background">
 
-                            <h2>{{menu.name}}</h2>
+                            <div class="single-menu">
 
-                            <p>{{menu.dsc}}</p>
+                                <h2>{{menu.name}}</h2>
 
-                            <span><b>{{menu.price}} €</b></span>
+                                <p>{{menu.dsc}}</p>
 
-                            <button class="add-menu-button" mat-mini-fab>
-                                <mat-icon>add</mat-icon>
-                            </button>
+                                <span><b>{{menu.price}} €</b></span>
 
+                                <button class="add-menu-button" mat-mini-fab>
+                                    <mat-icon>add</mat-icon>
+                                </button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
