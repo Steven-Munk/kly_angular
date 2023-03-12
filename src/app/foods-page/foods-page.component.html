@@ -14,9 +14,15 @@
 
         <div *ngIf="apiLoaded" class="menu-list" id="menuList">
 
-            <div *ngFor="let categorie of menuJSON" class="food-categorie">
+            <div *ngFor="let categorie of menuJSON; let i = index" class="food-categorie">
 
-                <img *ngIf="!userSearchesFood" class="categorie-image" [src]="categorie.menus[0].img">
+                <div *ngIf="!userSearchesFood">
+
+                    <h2 class="categorie-title">{{ upperCaseCategories[i] }}</h2>
+
+                    <div class="white-list-line"></div>
+
+                </div>
 
                 <div *ngFor="let menu of categorie.menus">
 

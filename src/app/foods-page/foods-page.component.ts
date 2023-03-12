@@ -64,9 +64,6 @@ export class FoodsPageComponent {
   }
 
 
-
-
-
   searchFood(search: string) {
     if (search == '') {
       this.userSearchesFood = false;
@@ -100,9 +97,4 @@ export class FoodsPageComponent {
       });
     });
   }
-
-
-
-
-
 }
