@@ -9,6 +9,7 @@
     justify-content: center;
 }
 
+
 .foods-page-container::-webkit-scrollbar {
     display: none;
 }
@@ -34,46 +35,22 @@
     color: white;
 }
 
+
 input::placeholder {
     font-family: 'Inter';
     font-size: 16px;
     color: white;
 }
 
+
 input:focus {
     outline: none;
 }
 
+
 input:focus::placeholder {
     color: transparent;
 }
-
-
-// .food-categories {
-//     background-color: rgba(255, 255, 255, 0.1);
-//     display: flex;
-//     align-items: center;
-//     overflow-y: auto;
-//     padding-inline: 16px;
-//     margin-bottom: 16px;
-//     min-height: 48px;
-//     border-radius: 32px;
-//     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
-
-//     span {
-//         font-size: 16px;
-//         color: white;
-//         background-color: rgba(255, 255, 255, 0.2);
-//         margin-right: 8px;
-//         padding: 6px 12px;
-//         border-radius: 32px;
-//         white-space: nowrap;
-//     }
-// }
-
-// .food-categories::-webkit-scrollbar {
-//     display: none;
-// }
 
 
 .menu-list {
@@ -83,6 +60,7 @@ input:focus::placeholder {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 
 .menu-list::-webkit-scrollbar {
     display: none;
@@ -151,16 +129,6 @@ input:focus::placeholder {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .food-card {
     position: absolute;
     left: 5%;
@@ -186,14 +154,10 @@ input:focus::placeholder {
 }
 
 
-
-
 .close-button-position {
     display: flex;
     justify-content: flex-end;
 }
-
-
 
 
 .food-card-content {
@@ -209,15 +173,13 @@ input:focus::placeholder {
 }
 
 
-
-
-
 .card-order-section {
     display: flex;
     flex-direction: column;
     padding-block: 16px;
     gap: 16px;
 }
+
 
 .card-amount-and-price {
     display: flex;
@@ -232,11 +194,13 @@ input:focus::placeholder {
     gap: 8px;
 }
 
+
 .amount-button {
     font-family: 'inter';
     font-size: 20px;
     font-weight: 500;
 }
+
 
 .sc-button {
     border: none;
@@ -248,13 +212,6 @@ input:focus::placeholder {
     border-radius: 20px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
-
-
-
-
-
-
-
 
 
 .food-card-image {

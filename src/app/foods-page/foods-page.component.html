@@ -4,14 +4,6 @@
 
         <input class="searchbar" type="text" placeholder="Search food..." #box (input)="searchFood(box.value)">
 
-        <!-- <div class="food-categories">
-
-            <span *ngFor="let categorie of upperCaseCategories" (click)="searchFor(categorie)">
-                {{ categorie }}
-            </span>
-
-        </div> -->
-
         <div *ngIf="apiLoaded" class="menu-list" id="menuList">
 
             <div *ngFor="let categorie of menuJSON; let i = index" class="food-categorie">
@@ -52,36 +44,6 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div *ngIf="foodCardOpen" class="food-card">
 
             <div class="close-button-position">
@@ -117,7 +79,9 @@
                             </button>
 
                             <button mat-fab class="amount-button">
+
                                 {{ foodCardInfo[0].amount }}
+                                
                             </button>
 
                             <button mat-mini-fab (click)="changeAmountAndTotal('+')">
@@ -143,49 +107,5 @@
             <img class="food-card-image" src="{{ foodCardInfo[0].img }}">
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </div>
