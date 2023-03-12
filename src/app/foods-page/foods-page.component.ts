@@ -99,7 +99,22 @@ export class FoodsPageComponent {
   }
 
 
-  // searchFor(categorie) {
-  //   console.log(categorie);
-  // }
+  foodCardOpen = false;
+
+  toggleFoodCard() {
+    // console.log(id);
+
+    if (this.foodCardOpen) {
+      this.foodCardOpen = false;
+    } else {
+      this.foodCardOpen = true;
+    }
+
+    
+
+  }
+
+
+
+
 }

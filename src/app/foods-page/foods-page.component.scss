@@ -49,31 +49,31 @@ input:focus::placeholder {
 }
 
 
-.food-categories {
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    overflow-y: auto;
-    padding-inline: 16px;
-    margin-bottom: 16px;
-    min-height: 48px;
-    border-radius: 32px;
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+// .food-categories {
+//     background-color: rgba(255, 255, 255, 0.1);
+//     display: flex;
+//     align-items: center;
+//     overflow-y: auto;
+//     padding-inline: 16px;
+//     margin-bottom: 16px;
+//     min-height: 48px;
+//     border-radius: 32px;
+//     box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
 
-    span {
-        font-size: 16px;
-        color: white;
-        background-color: rgba(255, 255, 255, 0.2);
-        margin-right: 8px;
-        padding: 6px 12px;
-        border-radius: 32px;
-        white-space: nowrap;
-    }
-}
+//     span {
+//         font-size: 16px;
+//         color: white;
+//         background-color: rgba(255, 255, 255, 0.2);
+//         margin-right: 8px;
+//         padding: 6px 12px;
+//         border-radius: 32px;
+//         white-space: nowrap;
+//     }
+// }
 
-.food-categories::-webkit-scrollbar {
-    display: none;
-}
+// .food-categories::-webkit-scrollbar {
+//     display: none;
+// }
 
 
 .menu-list {
@@ -148,4 +148,97 @@ input:focus::placeholder {
     right: 16px;
     color: rgb(255, 255, 255);
     background-color: rgba(30, 30, 30, 0.8)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.food-card {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 16px;
+    bottom: 0px;
+
+    padding: 16px;
+    color: white;
+
+    border-radius: 20px;
+    border: 2px solid gray;
+    background-image: linear-gradient(225deg, rgb(25, 25, 25), rgb(35, 35, 35));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    button {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: rgb(30, 30, 30);
+    }
+}
+
+
+
+
+.close-button-position {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+.food-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.food-card-title {
+    font-size: 32px;
+}
+
+
+
+
+
+
+
+.card-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 16px;
+}
+
+
+.card-amount-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+.food-card-image {
+    height: 25%;
+    object-fit: cover;
+    border-radius: 12px;
 }
