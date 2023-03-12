@@ -4,13 +4,13 @@
 
         <input class="searchbar" type="text" placeholder="Search food..." #box (input)="searchFood(box.value)">
 
-        <div class="food-categories">
+        <!-- <div class="food-categories">
 
-            <span *ngFor="let categorie of upperCaseCategories">
+            <span *ngFor="let categorie of upperCaseCategories" (click)="searchFor(categorie)">
                 {{ categorie }}
             </span>
 
-        </div>
+        </div> -->
 
         <div *ngIf="apiLoaded" class="menu-list" id="menuList">
 

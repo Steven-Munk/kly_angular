@@ -97,4 +97,9 @@ export class FoodsPageComponent {
       });
     });
   }
+
+
+  // searchFor(categorie) {
+  //   console.log(categorie);
+  // }
 }
