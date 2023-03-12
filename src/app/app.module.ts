@@ -12,6 +12,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FoodsPageComponent } from './foods-page/foods-page.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FoodsPageComponent } from './foods-page/foods-page.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    FoodsPageComponent
+    FoodsPageComponent,
+    ShoppingCartComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

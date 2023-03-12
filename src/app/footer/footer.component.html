@@ -2,16 +2,19 @@
 
     <div class="footer-content">
 
-        <div>
+        <div routerLink="/" (click)="switchRoute('home')" [ngStyle]="{'background-color': (openPage=='home') ? 'rgba(255, 255, 255, 0.2)' : ''}">
             <img src="../assets/icons/home_icon.svg">
         </div>
-        <div>
+
+        <div routerLink="/" (click)="switchRoute('location')" [ngStyle]="{'background-color': (openPage=='location') ? 'rgba(255, 255, 255, 0.2)' : ''}">
             <img src="../assets/icons/qr_code_icon.svg">
         </div>
-        <div>
+
+        <div routerLink="/menu" (click)="switchRoute('menu')" [ngStyle]="{'background-color': (openPage=='menu') ? 'rgba(255, 255, 255, 0.2)' : ''}">
             <img src="../assets/icons/rice_bowl_icon.svg">
         </div>
-        <div>
+
+        <div routerLink="/shopping-cart" (click)="switchRoute('sc')" [ngStyle]="{'background-color': (openPage=='sc') ? 'rgba(255, 255, 255, 0.2)' : ''}">
             <img src="../assets/icons/sc_icon.svg">
         </div>
 
