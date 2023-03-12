@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-foods-page',
   templateUrl: './foods-page.component.html',
@@ -24,6 +23,9 @@ export class FoodsPageComponent {
       'img': ''
     }
   ];
+
+  
+  cart = [];
 
 
   constructor() {
@@ -164,7 +166,11 @@ export class FoodsPageComponent {
 
 
   addToCart() {
-    console.log('take info from foodCartInfo and add to sc');
+    this.cart.push(this.foodCardInfo[0]);
+    console.log(this.foodCardInfo[0]);
+    console.log(this.cart);
+    
+    // this.closeFoodCard();
   }
 
 
