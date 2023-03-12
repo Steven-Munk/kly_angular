@@ -99,22 +99,102 @@ export class FoodsPageComponent {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   foodCardOpen = false;
-
-  toggleFoodCard() {
-    // console.log(id);
-
-    if (this.foodCardOpen) {
-      this.foodCardOpen = false;
-    } else {
-      this.foodCardOpen = true;
+  foodCardInfo = [
+    {
+      'food': '',
+      'dsc': '',
+      'amount': 1,
+      'price': 0,
+      'total': 0,
+      'img': ''
     }
+  ];
 
-    
 
+  toggleFoodCard(id) {
+    this.foodCardOpen = true;
+    this.menuJSON.forEach(categorie => {
+      categorie.menus.forEach(menu => {
+        if (menu.id.includes(id)) {
+          this.ensertFoodToCard(menu);
+        }
+      });
+    });
   }
 
 
+  ensertFoodToCard(menu) {
+    this.foodCardInfo[0].food = menu.name;
+    this.foodCardInfo[0].dsc = menu.dsc;
+    this.foodCardInfo[0].price = menu.price;
+    this.foodCardInfo[0].total = menu.price;
+    this.foodCardInfo[0].img = menu.img;
+  }
 
 
+  changeAmountAndTotal(operation: string) {
+    this.changeAmount(operation)
+    this.changeTotal();
+  }
+
+
+  changeAmount(operation) {
+    if (operation == '+' && this.foodCardInfo[0].amount < 100) {
+      this.foodCardInfo[0].amount++;
+    } else if (this.foodCardInfo[0].amount > 1) {
+      this.foodCardInfo[0].amount--;
+    }
+  }
+
+
+  changeTotal() {
+    let price = this.foodCardInfo[0].price;
+    let newAmount = this.foodCardInfo[0].amount;
+    this.foodCardInfo[0].total = Math.floor(price * newAmount);
+  }
+
+
+  addToCart() {
+    console.log('take info from foodCartInfo and add to sc');
+  }
+
+
+  closeFoodCard() {
+    this.foodCardOpen = false;
+    this.foodCardInfo[0].food = '';
+    this.foodCardInfo[0].dsc = '';
+    this.foodCardInfo[0].amount = 1;
+    this.foodCardInfo[0].price = 0;
+    this.foodCardInfo[0].total = 0;
+    this.foodCardInfo[0].img = '';
+  }
 }
