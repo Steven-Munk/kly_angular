@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+
 @Component({
   selector: 'app-foods-page',
   templateUrl: './foods-page.component.html',
   styleUrls: ['./foods-page.component.scss']
 })
+
 export class FoodsPageComponent {
 
   foodWeServe = ['best-foods', 'pizzas', 'burgers', 'bbqs', 'drinks'];
@@ -20,12 +22,11 @@ export class FoodsPageComponent {
       'amount': 1,
       'price': 0,
       'total': 0,
-      'img': ''
+      'img': '',
+      'id': ''
     }
   ];
 
-  
-  cart = [];
 
 
   constructor() {
@@ -140,6 +141,7 @@ export class FoodsPageComponent {
     this.foodCardInfo[0].price = menu.price;
     this.foodCardInfo[0].total = menu.price;
     this.foodCardInfo[0].img = menu.img;
+    this.foodCardInfo[0].id = menu.id;
   }
 
 
@@ -165,12 +167,40 @@ export class FoodsPageComponent {
   }
 
 
-  addToCart() {
-    this.cart.push(this.foodCardInfo[0]);
-    console.log(this.foodCardInfo[0]);
-    console.log(this.cart);
-    
-    // this.closeFoodCard();
+  addItemToCart() {
+    const scTextArray = localStorage.getItem('Shopping-Cart');
+    if (scTextArray !== null) {
+      this.pushItemInto(scTextArray)
+    } else {
+      this.setShoppingCartStorage()
+    }
+    this.closeFoodCard();
+  }
+
+
+  pushItemInto(scTextArray) {
+    const scArray = JSON.parse(scTextArray);
+    this.checkIfItemAlreadyExists(scArray);
+    scArray.push(this.foodCardInfo[0]);
+    const updatedArray = JSON.stringify(scArray);
+    localStorage.setItem('Shopping-Cart', updatedArray);
+  }
+
+
+  checkIfItemAlreadyExists(scArray) {
+    scArray.forEach(scItem => {
+      if (scItem.id == this.foodCardInfo[0].id) {
+        this.foodCardInfo[0].amount = scItem.amount + this.foodCardInfo[0].amount;
+        this.foodCardInfo[0].total = scItem.total + this.foodCardInfo[0].total;
+        let indexOfItem = scArray.indexOf(scItem);
+        scArray.splice(indexOfItem, 1);
+      }
+    });
+  }
+
+
+  setShoppingCartStorage() {
+    localStorage.setItem('Shopping-Cart', JSON.stringify(this.foodCardInfo));
   }
 
 
@@ -182,5 +212,6 @@ export class FoodsPageComponent {
     this.foodCardInfo[0].price = 0;
     this.foodCardInfo[0].total = 0;
     this.foodCardInfo[0].img = '';
+    this.foodCardInfo[0].id = '';
   }
 }

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FoodsPageComponent } from '../foods-page/foods-page.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -8,17 +7,35 @@ import { FoodsPageComponent } from '../foods-page/foods-page.component';
 })
 export class ShoppingCartComponent {
 
-  shoppingInfo: FoodsPageComponent;
-  shoppingCart = [];
+  scArray;
 
   constructor() {
-
-    this.shoppingInfo = new FoodsPageComponent;
-
-    this.shoppingCart = this.shoppingInfo.cart;
-
-    console.log(this.shoppingCart);
-    
+    const scTextArray = localStorage.getItem('Shopping-Cart');
+    if (scTextArray !== null) {
+      this.scArray = JSON.parse(scTextArray);
+      console.log(this.scArray);
+      
+    } else {
+      console.log('Shopping Cart empty');
+    }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

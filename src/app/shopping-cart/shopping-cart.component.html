@@ -8,13 +8,13 @@
 
     <div class="sc-list">
 
-        <div class="sc-item">
+        <div class="sc-item" *ngFor="let item of scArray">
 
-            <img src="../assets/images/pizza.jpg">
+            <img src="{{ item.img }}">
 
             <div class="sc-item-text">
 
-                <h3>Pizza</h3>
+                <h3>{{ item.food }}</h3>
 
                 <div class="amount-section">
 
@@ -26,7 +26,7 @@
 
                     <button mat-fab class="amount-button">
 
-                        5
+                        {{ item.amount }}
 
                     </button>
 
@@ -40,261 +40,12 @@
 
             </div>
 
-            <span><b>69 €</b></span>
+            <span><b>{{ item.total }} €</b></span>
 
         </div>
 
-        <div class="sc-item">
 
-            <img src="../assets/images/pizza.jpg">
 
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
-
-        <div class="sc-item">
-
-            <img src="../assets/images/pizza.jpg">
-
-            <div class="sc-item-text">
-
-                <h3>Pizza</h3>
-
-                <div class="amount-section">
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>remove</mat-icon>
-
-                    </button>
-
-                    <button mat-fab class="amount-button">
-
-                        5
-
-                    </button>
-
-                    <button mat-mini-fab class="change-amount-button">
-
-                        <mat-icon>add</mat-icon>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <span><b>69 €</b></span>
-
-        </div>
 
     </div>
 
