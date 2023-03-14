@@ -10,7 +10,11 @@
 
         <div class="sc-item" *ngFor="let item of scArray; let i = index">
 
-            <img src="{{ item.img }}">
+            <div class="item-img-position">
+
+                <img src="{{ item.img }}">
+
+            </div>
 
             <div class="sc-item-text">
 
@@ -26,7 +30,7 @@
 
                     <button mat-fab class="amount-button">
 
-                        {{ item.amount }}
+                        <b>{{ item.amount }}</b>                        
 
                     </button>
 
