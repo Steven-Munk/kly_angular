@@ -10,6 +10,8 @@ export class ShoppingCartComponent {
   scArray;
   scTotal: number = 0;
   checkout: boolean = false;
+  tipPercentage: number = 0;
+  tip: number = 0;
 
 
   constructor() {
@@ -73,4 +75,56 @@ export class ShoppingCartComponent {
       this.checkout = true;
     }
   }
+
+
+
+
+
+
+
+
+
+  discountPercentage: number;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  applyTip(tipChosen: number) {
+    if (this.tipPercentage == tipChosen) {
+      this.tipPercentage = 0;
+      this.tip = 0;
+    } else {
+      this.tipPercentage = tipChosen;
+      this.tip = Math.floor((this.scTotal / 100) * this.tipPercentage);
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -30,7 +30,7 @@
 
                     <button mat-fab class="amount-button">
 
-                        <b>{{ item.amount }}</b>                        
+                        <b>{{ item.amount }}</b>
 
                     </button>
 
@@ -60,81 +60,91 @@
     <div class="checkout-container" *ngIf="checkout">
 
         <div class="close-button-position">
-    
+
             <button mat-mini-fab (click)="toggleCheckoutCard()">
-    
+
                 <mat-icon>close</mat-icon>
-    
+
             </button>
-    
+
         </div>
-    
+
         <div class="total-bill">
-    
+
             <div class="total-order-section">
-    
+
                 <span>Total Order</span>
-    
-                <span><b>100 €</b></span>
-    
+
+                <span><b>{{ scTotal }} €</b></span>
+
             </div>
-    
+
             <div class="discount-section">
-    
+
                 <span>Discount</span>
-    
+
                 <div>
-    
-                    <input type="number" placeholder="in %">
-    
-                    <span>0 €</span>
-    
-                </div>
-    
-            </div>
-    
-            <div class="tip-section">
-    
-                <span>Tip</span>
-    
-                <div class="tip-amount">
-    
+
                     <div>
-    
-                        <button>5%</button>
-                        <button>10%</button>
-                        <button>20%</button>
-    
+
+                        <input type="number" placeholder="in %" ngModel="discountPercentage">
+
+                        <button>Apply</button>
+
                     </div>
-    
+
+
                     <span>0 €</span>
-    
+
                 </div>
-    
+
             </div>
-    
+
+            <div class="tip-section">
+
+                <span>Tip</span>
+
+                <div class="tip-amount">
+
+                    <div>
+
+                        <button (click)="applyTip(5)"
+                            [ngStyle]="{'background-color': (tipPercentage==5) ? 'rgba(255, 255, 255, 0.6)' : ''}">5%</button>
+                        <button (click)="applyTip(10)"
+                            [ngStyle]="{'background-color': (tipPercentage==10) ? 'rgba(255, 255, 255, 0.6)' : ''}">10%</button>
+                        <button (click)="applyTip(20)"
+                            [ngStyle]="{'background-color': (tipPercentage==20) ? 'rgba(255, 255, 255, 0.6)' : ''}">20%</button>
+
+                    </div>
+
+                    <span>{{ tip }} €</span>
+
+                </div>
+
+            </div>
+
         </div>
-    
+
         <div class="total">
-    
+
             <span>Total</span>
-    
+
             <span><b>100 €</b></span>
-    
+
         </div>
-    
+
         <div class="payment-method">
-    
+
             <button>Cash</button>
-    
+
             <button>Card</button>
-    
+
             <button>PayPal</button>
-    
+
         </div>
-    
+
         <button class="final-button">Order Now!</button>
-    
+
     </div>
 
 </div>
