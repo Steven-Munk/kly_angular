@@ -9,11 +9,12 @@ export class ShoppingCartComponent {
 
   scArray;
   scTotal: number = 0;
-  checkout: boolean = true;
+  checkout: boolean = false;
 
 
   constructor() {
     this.renderShoppingCart();
+    this.getScTotal();
   }
 
 
@@ -62,5 +63,14 @@ export class ShoppingCartComponent {
     this.scArray[index].amount++;
     this.scArray[index].total = this.scArray[index].total + this.scArray[index].price;
     this.updateShoppingCart();
+  }
+
+
+  toggleCheckoutCard() {
+    if (this.checkout) {
+      this.checkout = false;
+    } else {
+      this.checkout = true;
+    }
   }
 }
