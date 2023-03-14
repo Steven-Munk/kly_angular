@@ -8,7 +8,7 @@
 
     <div class="sc-list">
 
-        <div class="sc-item" *ngFor="let item of scArray">
+        <div class="sc-item" *ngFor="let item of scArray; let i = index">
 
             <img src="{{ item.img }}">
 
@@ -18,7 +18,7 @@
 
                 <div class="amount-section">
 
-                    <button mat-mini-fab class="change-amount-button">
+                    <button mat-mini-fab class="change-amount-button" (click)="decreaseAmountOf(i)">
 
                         <mat-icon>remove</mat-icon>
 
@@ -30,7 +30,7 @@
 
                     </button>
 
-                    <button mat-mini-fab class="change-amount-button">
+                    <button mat-mini-fab class="change-amount-button" (click)="addAmountOf(i)">
 
                         <mat-icon>add</mat-icon>
 
@@ -51,7 +51,7 @@
 
     <div class="total-order">
         <span>Total Order</span>
-        <span><b>199 €</b></span>
+        <span><b>{{ scTotal }} €</b></span>
     </div>
 
     <button class="checkout-button">Go To Checkout</button>
