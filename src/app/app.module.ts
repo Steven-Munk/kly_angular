@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FoodsPageComponent } from './foods-page/foods-page.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { HomeComponent } from './home/home.component';
+import { CheckoutComponent } from './shopping-cart/checkout/checkout.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     FoodsPageComponent,
     ShoppingCartComponent,
-    HomeComponent
+    HomeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ export class ShoppingCartComponent {
 
   scArray;
   scTotal: number = 0;
+  checkout: boolean = true;
 
 
   constructor() {
