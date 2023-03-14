@@ -65,7 +65,7 @@ export class AppComponent {
 
 
   pushIntoJSON(data, i) {
-    for (let d = 0; d < 5; d++) {
+    for (let d = 0; d < 6; d++) {
       const menu = data[d];
       menu['display'] = true;
       this.menuJSON[i].menus.push(menu);
